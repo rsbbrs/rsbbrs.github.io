@@ -1,0 +1,103 @@
+/* Sets the properties for the entire page. */
+body {
+    margin: 0;
+    background-color: ivory;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/**********************************/
+/*                                */
+/*     HEADER SECTION CLASSES     */
+/*                                */
+/**********************************/
+.header-wrapper {
+    background-color: lightsalmon;
+}
+
+/* Centers the header to the page */
+.header {
+    font-size: larger;
+    text-align: center;
+    align-self: center;
+    justify-self: left;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 20px;
+}
+
+/* Makes the grid be only 1 column for smaller screens. */
+@media (max-width: 480px) {
+    .header-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+.header-image {
+    display: block;
+    margin-left: auto;  /* Sets the margin to the left of the image to the space available, pushing the image right. */
+    width: 250px;
+    height: 250px;
+}
+
+/*********************************/
+/*                               */
+/*     UNITS SECTION CLASSES     */
+/*                               */
+/*********************************/
+/* Styles for the translation units */
+.units-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    margin: 0px 100px;
+}
+
+@media (max-width: 1300px) {
+    .units-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+/* Centers the grid boxes. */
+.units {
+    justify-self: center;
+    padding: 4%;
+    width: 50%;
+    position: relative;
+}
+
+/* Sets the size of the image to be within the grid box. */
+/* Border radii rounds the corners of the image. */
+.units > img {
+    max-width: 100%;
+    border-radius: 25px;
+    transition: all ease-in-out 0.2s;
+}
+
+.units > img:hover {
+    box-shadow: 0 8px 12px 0 rgb(0, 0, 0, 0.8);
+}
+
+
+/***********************************/
+/*                                 */
+/*     FOOTER SECTION CLASSES      */
+/*                                 */
+/***********************************/
+.footer {
+    background-color: #2D3250;
+}
+
+.footer > h3 {
+    margin: 0;
+    padding: 50px;
+    color: ivory;
+}
