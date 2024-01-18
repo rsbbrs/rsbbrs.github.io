@@ -35,34 +35,40 @@
             </div>
 
             <!--Translator Sections.-->
-            <div>
+            <div id="main_place">
                 <h2 style="text-align: center; font-size: 30px;">Unidades</h2>
                 <div class="units-grid">
                     <div class="units">
-                        <img src="../img/unidad1.png"/>
+                        <img id="unit1" onclick="show(this)" src="../img/unidad1.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad2.png"/>
+                        <img id="unit2" onclick="show(this)" src="../img/unidad2.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad3.png"/>
+                        <img id="unit3" onclick="show(this)" src="../img/unidad3.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad4.png"/>
+                        <img id="unit4" onclick="show(this)" src="../img/unidad4.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad5.png"/>
+                        <img id="unit5" onclick="show(this)" src="../img/unidad5.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad6.png"/>
+                        <img id="unit6" onclick="show(this)" src="../img/unidad6.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad7.png"/>
+                        <img id="unit7" onclick="show(this)" src="../img/unidad7.png"/>
                     </div>
                     <div class="units">
-                        <img src="../img/unidad8.png"/>
+                        <img id="unit8" onclick="show(this)" src="../img/unidad8.png"/>
                     </div>
                 </div>
+            </div>
+
+            <!--Div that replaces main content to show the translator text boxes.-->
+            <div class="translator" id="translator" style="display:none">
+                <h2 id="unit-header"></h2>
+                <button onclick="back()">Regresar a Unidades</button>
             </div>
 
             <div class="footer">

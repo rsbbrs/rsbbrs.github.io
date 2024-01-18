@@ -1,0 +1,15 @@
+hola-hello
+buenos días-good morning
+buenas tardes-good afternoon
+buenas noches-good evening, good night
+¿Cómo te llamas?-what is your name?
+me llamo-my name is
+mucho gusto-nice to meet you
+¿Y tú?-and you?
+¿Cómo estás?-how are you?
+estoy bien-I'm fine
+más o menos-regular
+mal-bad
+hasta luego-see you later
+hasta mañana-see you tomorrow
+adiós-goodbye

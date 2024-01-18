@@ -1,0 +1,14 @@
+el perro-dog
+el gato-cat
+el chancho-pig
+el pato-duck
+la vaca-cow
+el caballo-horse
+el cuy-guinea pig
+la ardilla-squirrel
+el oso-bear
+el venado-deer
+la serpiente-snake
+la iguana-iguana
+la llama-llama
+la alpaca-alpaca
