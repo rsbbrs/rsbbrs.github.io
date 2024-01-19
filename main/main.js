@@ -1,18 +1,26 @@
+// Stores copies of the main and translator HTML divs.
+var main = document.getElementById('main');
+var translator = document.getElementById('translator');
+
 // Takes the ID of the element clicked and uses it in the display of the new content.
 function show(unit)
 {
-    document.getElementById('main_place').style.display = "none";
-    document.getElementById('translator').style.display = "block";
+    // Clones the main div, exchanges it with the translator div, then stores the clone for later use.
+    const mainClone = main.cloneNode(true);
+    main.replaceWith(translator);
+    main = mainClone;
 
+    // Uses the unit to set the title in the HTML tag.
     document.getElementById('unit-header').innerHTML = unitTitle(unit.id);
 }
 
-// Simply shows the original grid of units and hides the translator content.
+// Restores the units section when the button is clicked.
 function back()
 {
-    document.getElementById('main_place').style.display = "block";
-    document.getElementById('translator').style.display = "none"
-
+    // Clones the translator div, exchanges it with the main div, then stores the clone for later use.
+    const translatorClone = translator.cloneNode(true);
+    translator.replaceWith(main);
+    translator = translatorClone;
 }
 
 // Returns the title for the appropriate unit clicked in the page.

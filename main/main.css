@@ -4,7 +4,7 @@ body {
     background-color: ivory;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, label {
     font-family: "Lemon", serif;
     font-weight: 400;
     font-style: normal;
@@ -89,7 +89,7 @@ h2 {
     max-width: 100%;
     border-radius: 25px;
     box-shadow: 0 8px 12px 0 rgb(0, 0, 0, 0.4);
-    transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.4s;
 }
 
 .units > img:hover {
@@ -120,4 +120,50 @@ h2 {
 .translator
 {
     margin: 25px;
+}
+
+.forms-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    margin-bottom: 25px;
+
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+}
+
+@media (max-width: 1300px) {
+    .forms-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+.forms-area > label {
+    font-size: x-large;
+}
+
+.tArea {
+    width: 600px;
+    height: 30px;
+    font-size: xx-large;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.submit {
+    justify-self: right;
+}
+
+.back-button, .submit {
+    font-size: 24px;
+    background-color: ivory;
+    border-radius: 8px;
+    border: 2px solid lightskyblue;
+    transition: all ease-in-out 0.4s;
+}
+
+.back-button:hover, .submit:hover {
+    background-color: lightskyblue;
+    color: ivory;
 }

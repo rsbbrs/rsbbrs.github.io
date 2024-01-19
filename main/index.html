@@ -35,7 +35,7 @@
             </div>
 
             <!--Translator Sections.-->
-            <div id="main_place">
+            <div id="main">
                 <h2 style="text-align: center; font-size: 30px;">Unidades</h2>
                 <div class="units-grid">
                     <div class="units">
@@ -66,9 +66,25 @@
             </div>
 
             <!--Div that replaces main content to show the translator text boxes.-->
-            <div class="translator" id="translator" style="display:none">
-                <h2 id="unit-header"></h2>
-                <button onclick="back()">Regresar a Unidades</button>
+            <div style="display:none">
+                <div class="translator" id="translator">
+                    <h2 id="unit-header"></h2>
+                    
+                    <div class="forms-grid">
+                        <form class="forms-area">
+                            <label for="tArea">This is where the text will appear</label>
+                            <br/>
+                            <input class="tArea" type="text" id="tArea" name="tArea"/>
+                            <br/>
+                            <button class="submit" type="button">Enviar</button>
+                        </form>
+
+                        <img src="https://placehold.co/600x400"/>
+                    </div>
+                    
+
+                    <button class="back-button" onclick="back()">Regresar a Unidades</button>
+                </div>
             </div>
 
             <div class="footer">
