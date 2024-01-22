@@ -49,8 +49,53 @@ function unitTitle(unitID)
     }
 }
 
+// Checks the typed text with the correct answer.
 function submitButton() 
 {
-    const text = document.getElementById('tArea');
-    console.log(text.value);
+    // Gets the text from the textbox on the page.
+    const text = document.getElementById('tArea').value.toLowerCase();
+
+    if(text === "hello world")
+        alert("Correct!");
+    else
+        alert("Incorrect");
+}
+
+// Sets the text on the textbox based on the value of the button clicked.
+// Adds the special spanish characters to the text area.
+function addText(buttonVal)
+{
+    let text = document.getElementById('tArea');
+    text.value += buttonVal.value;
+    text.focus();
+}
+
+// Changes the values of the special spanish characters values to uppercase or lowercase.
+// This is dependent on the font change button value.
+function changeFont() 
+{
+    let myVal = document.getElementById('font-change');
+    
+    if(myVal.value === "Uppercase")
+    {
+        document.getElementById('á').value = 'Á';
+        document.getElementById('é').value = 'É';
+        document.getElementById('í').value = 'Í';
+        document.getElementById('ó').value = 'Ó';
+        document.getElementById('ú').value = 'Ú';
+        document.getElementById('ñ').value = 'Ñ';
+        myVal.value = "Lowercase";
+    }  
+    else
+    {
+        document.getElementById('á').value = 'á';
+        document.getElementById('é').value = 'é';
+        document.getElementById('í').value = 'í';
+        document.getElementById('ó').value = 'ó';
+        document.getElementById('ú').value = 'ú';
+        document.getElementById('ñ').value = 'ñ';
+        myVal.value = "Uppercase";
+    }
+
+    document.getElementById('tArea').focus();
 }

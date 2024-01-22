@@ -144,18 +144,71 @@ h2 {
 }
 
 .tArea {
-    width: 600px;
-    height: 30px;
+    width: 700px;
+    height: 50px;
     font-size: xx-large;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
-.submit {
-    justify-self: right;
+.help-buttons {
+    display: grid;
+    grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
+    grid-template-rows: 100%;
+    grid-gap: 4px;
 }
 
-.back-button, .submit {
+.special-chars {
+    height: 50px;
+    background-color: ivory;
+    font-size: 24px;
+    border-radius: 8px;
+    border: 2px solid lightcoral;
+    transition: all ease-in-out 0.4s;
+}
+
+.special-chars:hover {
+    background-color: lightcoral;
+    color: ivory;
+}
+
+.assist-buttons {
+    display: grid;
+    grid-template-columns: 20% 20%;
+    margin-top: 15px;
+    grid-gap: 15px
+}
+
+.submit {
+    height: 50px;
+    font-size: 24px;
+    background-color: ivory;
+    border-radius: 8px;
+    border: 2px solid lightsalmon;
+    transition: all ease-in-out 0.4s;
+}
+
+.submit:hover {
+    background-color: lightsalmon;
+    color: ivory;
+}
+
+.font-change {
+    height: 50px;
+    font-size: 24px;
+    background-color: ivory;
+    border-radius: 8px;
+    border: 2px solid lightgreen;
+    transition: all ease-in-out 0.4s;
+}
+
+.font-change:hover {
+    background-color: lightgreen;
+    color: ivory;
+}
+
+.back-button {
+    height: 50px;
     font-size: 24px;
     background-color: ivory;
     border-radius: 8px;
@@ -163,7 +216,7 @@ h2 {
     transition: all ease-in-out 0.4s;
 }
 
-.back-button:hover, .submit:hover {
+.back-button:hover {
     background-color: lightskyblue;
     color: ivory;
 }

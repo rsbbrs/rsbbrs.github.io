@@ -76,7 +76,20 @@
                             <br/>
                             <input class="tArea" type="text" id="tArea" name="tArea"/>
                             <br/>
-                            <button class="submit" id="submit" type="button" onclick="submitButton()">Enviar</button>
+                            <div class="help-buttons">
+                                <input type="button" id="á" value="á" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="é" value="é" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="í" value="í" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="ó" value="ó" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="ú" value="ú" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="ñ" value="ñ" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="¿" value="¿" class="special-chars" onclick="addText(this)"/>
+                                <input type="button" id="¡" value="¡" class="special-chars" onclick="addText(this)"/>
+                            </div>
+                            <div class="assist-buttons">
+                                <input type="button" id="font-change" value="Uppercase" class="font-change" onclick="changeFont()"/>
+                                <button class="submit" id="submit" type="button" onclick="submitButton()">Enviar</button>
+                            </div>
                         </form>
 
                         <img src="https://placehold.co/600x400"/>
