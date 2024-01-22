@@ -26,8 +26,6 @@ function back()
 // Returns the title for the appropriate unit clicked in the page.
 function unitTitle(unitID)
 {
-    var title;
-
     switch(unitID)
     {
         case "unit1":
@@ -47,6 +45,12 @@ function unitTitle(unitID)
         case "unit8":
             return "Unidad 8";
         default:
-            return "Undefined. You should not see this ever or I'm in trouble";
+            return "Undefined. You should never see this or I'm in trouble";
     }
+}
+
+function submitButton() 
+{
+    const text = document.getElementById('tArea');
+    console.log(text.value);
 }
