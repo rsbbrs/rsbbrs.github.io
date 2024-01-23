@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href="styles/main.css"/>
 
         <!--Imports for the lemon font from google fonts.-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,28 +39,28 @@
                 <h2 style="text-align: center; font-size: 30px;">Unidades</h2>
                 <div class="units-grid">
                     <div class="units">
-                        <img id="unit1" onclick="show(this)" src="../img/unidad1.png"/>
+                        <img id="unit1" onclick="show(this)" src="images/unidad1.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit2" onclick="show(this)" src="../img/unidad2.png"/>
+                        <img id="unit2" onclick="show(this)" src="images/unidad2.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit3" onclick="show(this)" src="../img/unidad3.png"/>
+                        <img id="unit3" onclick="show(this)" src="images/unidad3.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit4" onclick="show(this)" src="../img/unidad4.png"/>
+                        <img id="unit4" onclick="show(this)" src="images/unidad4.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit5" onclick="show(this)" src="../img/unidad5.png"/>
+                        <img id="unit5" onclick="show(this)" src="images/unidad5.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit6" onclick="show(this)" src="../img/unidad6.png"/>
+                        <img id="unit6" onclick="show(this)" src="images/unidad6.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit7" onclick="show(this)" src="../img/unidad7.png"/>
+                        <img id="unit7" onclick="show(this)" src="images/unidad7.png"/>
                     </div>
                     <div class="units">
-                        <img id="unit8" onclick="show(this)" src="../img/unidad8.png"/>
+                        <img id="unit8" onclick="show(this)" src="images/unidad8.png"/>
                     </div>
                 </div>
             </div>
@@ -72,9 +72,9 @@
                     
                     <div class="forms-grid">
                         <form class="forms-area">
-                            <label for="tArea">This is where the text will appear</label>
+                            <label for="tArea" id="tAreaLabel"></label>
                             <br/>
-                            <input class="tArea" type="text" id="tArea" name="tArea"/>
+                                <input class="tArea" type="text" id="tArea" name="tArea" placeholder="Type your answer here..." autofocus/>
                             <br/>
                             <div class="help-buttons">
                                 <input type="button" id="á" value="á" class="special-chars" onclick="addText(this)"/>
@@ -106,6 +106,6 @@
 
         </div>
 
-        <script src="main.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>

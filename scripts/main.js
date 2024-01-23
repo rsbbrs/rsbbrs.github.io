@@ -1,6 +1,11 @@
+
+
 // Stores copies of the main and translator HTML divs.
 var main = document.getElementById('main');
 var translator = document.getElementById('translator');
+var unitMap;
+var values;
+var index = 0;
 
 // Takes the ID of the element clicked and uses it in the display of the new content.
 function show(unit)
@@ -12,11 +17,22 @@ function show(unit)
 
     // Uses the unit to set the title in the HTML tag.
     document.getElementById('unit-header').innerHTML = unitTitle(unit.id);
+
+    // Gets the appropriate text array from the vocab.js file.
+    unitMap = new Map(unitChooser(unit.id));
+    values = Array.from(unitMap.values());
+
+    console.log(values.length);
+
+    document.getElementById('tAreaLabel').innerHTML = values[index];
 }
 
 // Restores the units section when the button is clicked.
 function back()
 {
+    if(index === values.length - 1)
+        index = 0;
+
     // Clones the translator div, exchanges it with the main div, then stores the clone for later use.
     const translatorClone = translator.cloneNode(true);
     translator.replaceWith(main);
@@ -52,11 +68,22 @@ function unitTitle(unitID)
 // Checks the typed text with the correct answer.
 function submitButton() 
 {
-    // Gets the text from the textbox on the page.
-    const text = document.getElementById('tArea').value.toLowerCase();
+    // Gets the text from the label above the text area.
+    let english = document.getElementById('tAreaLabel');
 
-    if(text === "hello world")
-        alert("Correct!");
+    // Gets the text from the textbox on the page.
+    let spanish = document.getElementById('tArea');
+
+    if(english.innerText === unitMap.get(spanish.value))
+    {
+        alert("Correct")
+        if(index === values.length - 1)
+            english.innerHTML = "Unit completed! Please Return to the Units Page.";
+        else
+            english.innerHTML = values[++index];
+
+        spanish.value = "";
+    }
     else
         alert("Incorrect");
 }
@@ -66,7 +93,10 @@ function submitButton()
 function addText(buttonVal)
 {
     let text = document.getElementById('tArea');
-    text.value += buttonVal.value;
+    const start = text.selectionStart;
+    const end = text.selectionEnd;
+    text.value = text.value.substring(0, start) + buttonVal.value + text.value.substring(end, text.value.length);
+    text.setSelectionRange(start + 1, end + 1);
     text.focus();
 }
 
@@ -98,4 +128,39 @@ function changeFont()
     }
 
     document.getElementById('tArea').focus();
+}
+
+/*********************************/
+/*                               */
+/* Vocab vairables and functions */
+/*                               */
+/*********************************/
+
+const unit1 = [
+    ['hola', 'hello'],
+    ['buenos días', 'good morning'],
+    ['buenas tardes', 'good afternoon'],
+    ['buenas noches', 'good evening, good night'],
+    ['¿Cómo te llamas?', 'what is your name?'],
+    ['me llamo', 'my name is'],
+    ['mucho gusto', 'nice to meet you'],
+    ['¿Y tú?', 'and you?'],
+    ['¿Cómo estás?', 'how are you?'],
+    ['estoy bien', 'I\'m fine'],
+    ['más o menos', 'regular'],
+    ['mal', 'bad'],
+    ['hasta luego', 'see you later'],
+    ['hasta mañana', 'see you tomorrow'],
+    ['adiós', 'goodbye']
+];
+
+function unitChooser(unit)
+{
+    switch(unit)
+    {
+        case "unit1":
+            return unit1;
+        default:
+            return "Undefined. You should never see this or I'm in trouble";
+    }
 }
