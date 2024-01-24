@@ -1,5 +1,3 @@
-
-
 // Stores copies of the main and translator HTML divs.
 var main = document.getElementById('main');
 var translator = document.getElementById('translator');
@@ -19,18 +17,42 @@ function show(unit)
     document.getElementById('unit-header').innerHTML = unitTitle(unit.id);
 
     // Gets the appropriate text array from the vocab.js file.
-    unitMap = new Map(unitChooser(unit.id));
-    values = Array.from(unitMap.values());
+    let validUnit = unitChooser(unit.id);
 
-    console.log(values.length);
+    // Creates the translator map and the array of values for displaying on the label.
+    if(validUnit)
+    {
+        unitMap = new Map(validUnit);
+        values = Array.from(unitMap.values());
+        document.getElementById('tAreaLabel').innerHTML = values[index];
+    }
+    else
+    {
+        unitMap = null;
+        values = null;
+        document.getElementById('tAreaLabel').innerHTML = "Error: You should not see this, or I'm in trouble!";
+    }
 
-    document.getElementById('tAreaLabel').innerHTML = values[index];
+    // Disables enter key from refreshing the page.
+    // Executes the submit button function instead.
+    let text = document.getElementById('tArea');
+    text.addEventListener('keypress', function(e) {
+        if(e.key === "Enter")
+        {
+            e.preventDefault();
+            submitForm()
+        }
+    });
+
+    // Clears the text area and sets focus on it.
+    text.value = "";
+    text.focus();
 }
 
 // Restores the units section when the button is clicked.
 function back()
 {
-    if(index === values.length - 1)
+    if(values && index === values.length - 1)
         index = 0;
 
     // Clones the translator div, exchanges it with the main div, then stores the clone for later use.
@@ -66,7 +88,7 @@ function unitTitle(unitID)
 }
 
 // Checks the typed text with the correct answer.
-function submitButton() 
+function submitForm() 
 {
     // Gets the text from the label above the text area.
     let english = document.getElementById('tAreaLabel');
@@ -74,18 +96,28 @@ function submitButton()
     // Gets the text from the textbox on the page.
     let spanish = document.getElementById('tArea');
 
-    if(english.innerText === unitMap.get(spanish.value))
+    // Only executes if the textarea has a value on it.
+    if(spanish.value)
     {
-        alert("Correct")
-        if(index === values.length - 1)
-            english.innerHTML = "Unit completed! Please Return to the Units Page.";
-        else
-            english.innerHTML = values[++index];
+        // Only searches the map if it's been created.
+        if(unitMap)
+        {
+            if(english.innerText === unitMap.get(spanish.value))
+            {
+                alert("Correct")
+                if(index === values.length - 1)
+                    english.innerHTML = "Unit completed! Please Return to the Units Page.";
+                else
+                    english.innerHTML = values[++index];
 
-        spanish.value = "";
+                spanish.value = "";
+            }
+            else
+                alert("Incorrect");
+        }
     }
-    else
-        alert("Incorrect");
+    
+    spanish.focus();
 }
 
 // Sets the text on the textbox based on the value of the button clicked.
@@ -154,13 +186,64 @@ const unit1 = [
     ['adiós', 'goodbye']
 ];
 
+const unit2 = [
+    ['a', 'a'],
+    ['be', 'b'],
+    ['ce', 'c'],
+    ['de', 'd'],
+    ['e', 'e'],
+    ['efe','f'],
+    ['ge', 'g'],
+    ['hache', 'h'],
+    ['i', 'i'],
+    ['jota', 'j'],
+    ['ka', 'k'],
+    ['ele', 'l'],
+    ['eme', 'm'],
+    ['ene', 'n'],
+    ['eñe', 'ñ'],
+    ['o', 'o'],
+    ['pe', 'p'],
+    ['cu', 'q'],
+    ['ere', 'r'],
+    ['ese', 's'],
+    ['te', 't'],
+    ['u', 'u'],
+    ['ve', 'v'],
+    ['doble ve', 'w'],
+    ['equis', 'x'],
+    ['igriega', 'y'],
+    ['zeta', 'z']
+];
+
+const unit3 = [
+    ['el perro', 'dog'],
+    ['el gato', 'cat'],
+    ['el chancho', 'pig'],
+    ['el pato', 'duck'],
+    ['la vaca', 'cow'],
+    ['el caballo', 'horse'],
+    ['el cuy', 'guinea pig'],
+    ['la ardilla', 'squirrel'],
+    ['el oso', 'bear'],
+    ['el venado', 'deer'],
+    ['la serpiente', 'snake'],
+    ['la iguana', 'iguana'],
+    ['la llama', 'llama'],
+    ['la alpaca', 'alpaca']
+];
+
 function unitChooser(unit)
 {
     switch(unit)
     {
         case "unit1":
             return unit1;
+        case "unit2":
+            return unit2;
+        case "unit3":
+            return unit3;
         default:
-            return "Undefined. You should never see this or I'm in trouble";
+            return null;
     }
 }
