@@ -3,7 +3,7 @@ var main = document.getElementById('main');
 var translator = document.getElementById('translator');
 var unitMap;
 var values;
-var index = 0;
+var index = 14;
 
 // Takes the ID of the element clicked and uses it in the display of the new content.
 function show(unit)
@@ -52,8 +52,7 @@ function show(unit)
 // Restores the units section when the button is clicked.
 function back()
 {
-    if(values && index === values.length - 1)
-        index = 0;
+    index = 0;
 
     // Clones the translator div, exchanges it with the main div, then stores the clone for later use.
     const translatorClone = translator.cloneNode(true);
@@ -91,33 +90,33 @@ function unitTitle(unitID)
 function submitForm() 
 {
     // Gets the text from the label above the text area.
-    let english = document.getElementById('tAreaLabel');
+    let label = document.getElementById('tAreaLabel');
 
     // Gets the text from the textbox on the page.
-    let spanish = document.getElementById('tArea');
+    let textarea = document.getElementById('tArea');
 
     // Only executes if the textarea has a value on it.
-    if(spanish.value)
+    if(textarea.value)
     {
         // Only searches the map if it's been created.
         if(unitMap)
         {
-            if(english.innerText === unitMap.get(spanish.value))
+            if(label.innerText === unitMap.get(textarea.value))
             {
                 alert("Correct")
                 if(index === values.length - 1)
-                    english.innerHTML = "Unit completed! Please Return to the Units Page.";
+                    label.innerHTML = "Unit completed! Please Return to the Units Page.";
                 else
-                    english.innerHTML = values[++index];
+                    label.innerHTML = values[++index];
 
-                spanish.value = "";
+                textarea.value = "";
             }
             else
                 alert("Incorrect");
         }
     }
     
-    spanish.focus();
+    textarea.focus();
 }
 
 // Sets the text on the textbox based on the value of the button clicked.
