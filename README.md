@@ -12,4 +12,6 @@ common Spanish phrases by associating them with their English equivalents.
 -Special character buttons for typing Spanish-specific letters both in lower- and upper-case.
 
 ### Languages
-HTML, CSS and JavaScript.
+-HTML
+-CSS
+-JavaScript.
