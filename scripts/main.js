@@ -1,9 +1,12 @@
 // Stores copies of the main and translator HTML divs.
 var main = document.getElementById('main');
 var translator = document.getElementById('translator');
+
+// Shared variables used in the script.
 var unitMap;
 var values;
-var index = 14;
+var isCorrect;
+var index = 0;
 
 // Takes the ID of the element clicked and uses it in the display of the new content.
 function show(unit)
@@ -87,6 +90,7 @@ function unitTitle(unitID)
 }
 
 // Checks the typed text with the correct answer.
+// Displays the correct popup box.
 function submitForm() 
 {
     // Gets the text from the label above the text area.
@@ -103,20 +107,43 @@ function submitForm()
         {
             if(label.innerText === unitMap.get(textarea.value))
             {
-                alert("Correct")
-                if(index === values.length - 1)
-                    label.innerHTML = "Unit completed! Please Return to the Units Page.";
-                else
-                    label.innerHTML = values[++index];
-
-                textarea.value = "";
+                // Show the popup window.
+                document.getElementById('popupHeader').innerHTML = "Correct!";
+                document.getElementById('popup').classList.add("show");
+                isCorrect = true;
             }
             else
-                alert("Incorrect");
+            {
+                // Show the popup window.
+                document.getElementById('popupHeader').innerHTML = "Incorrect. Try Again!";
+                document.getElementById('popup').classList.add("show");
+                isCorrect = false;
+            }
         }
     }
-    
-    textarea.focus();
+
+    // Sets the focus on the popup window.
+    document.getElementById('closePopup').focus();
+}
+
+// Closes the popup window and displays the next question if answered correctly.
+function closePopupBox()
+{
+    document.getElementById('popup').classList.remove('show');
+    let label = document.getElementById('tAreaLabel');
+    let textArea = document.getElementById('tArea');
+
+    if(isCorrect)
+    {
+        if(index === values.length - 1)
+            label.innerHTML = "Unit completed! Please Return to the Units Page.";
+        else
+            label.innerHTML = values[++index];
+
+        textArea.value = "";
+    }
+
+    textArea.focus();
 }
 
 // Sets the text on the textbox based on the value of the button clicked.
