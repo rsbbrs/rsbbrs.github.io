@@ -240,8 +240,8 @@ h2 {
 }
 
 .popup-content {
-    background-color: ivory;
     text-align: center;
+    color: ivory;
     border-radius: 15px;
     margin: 10% auto;
     padding: 20px;

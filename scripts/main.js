@@ -19,7 +19,7 @@ function show(unit)
     // Uses the unit to set the title in the HTML tag.
     document.getElementById('unit-header').innerHTML = unitTitle(unit.id);
 
-    // Gets the appropriate text array from the vocab.js file.
+    // Gets the appropriate text array or null if invalid.
     let validUnit = unitChooser(unit.id);
 
     // Creates the translator map and the array of values for displaying on the label.
@@ -110,6 +110,8 @@ function submitForm()
                 // Show the popup window.
                 document.getElementById('popupHeader').innerHTML = "Correct!";
                 document.getElementById('popup').classList.add("show");
+                document.getElementById('popup-content').style.backgroundColor = "lime";
+
                 isCorrect = true;
             }
             else
@@ -117,12 +119,14 @@ function submitForm()
                 // Show the popup window.
                 document.getElementById('popupHeader').innerHTML = "Incorrect. Try Again!";
                 document.getElementById('popup').classList.add("show");
+                document.getElementById('popup-content').style.backgroundColor = "red";
+
                 isCorrect = false;
             }
         }
     }
 
-    // Sets the focus on the popup window.
+    // Sets the focus on the popup window close button.
     document.getElementById('closePopup').focus();
 }
 
@@ -133,6 +137,8 @@ function closePopupBox()
     let label = document.getElementById('tAreaLabel');
     let textArea = document.getElementById('tArea');
 
+    // Next question displayed if it was answered correctly.
+    // If it's the last question, then display the completed message.
     if(isCorrect)
     {
         if(index === values.length - 1)
