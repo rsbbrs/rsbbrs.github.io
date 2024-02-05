@@ -107,19 +107,21 @@ function submitForm()
         {
             if(label.innerText === unitMap.get(textarea.value))
             {
-                // Show the popup window.
+                // Show the popup window with the "Correct" answer configuration.
                 document.getElementById('popupHeader').innerHTML = "Correct!";
                 document.getElementById('popup').classList.add("show");
                 document.getElementById('popup-content').style.backgroundColor = "lime";
+                document.getElementById('answer-image').src = "images/Correct.png";
 
                 isCorrect = true;
             }
             else
             {
-                // Show the popup window.
+                // Show the popup window with the "Incorrect" answer configuration.
                 document.getElementById('popupHeader').innerHTML = "Incorrect. Try Again!";
                 document.getElementById('popup').classList.add("show");
                 document.getElementById('popup-content').style.backgroundColor = "red";
+                document.getElementById('answer-image').src = "images/Incorrect.png";
 
                 isCorrect = false;
             }
@@ -265,6 +267,90 @@ const unit3 = [
     ['la alpaca', 'alpaca']
 ];
 
+const unit4 = [
+    ['España', 'Country'],
+    ['Madrid', 'Capital of Spain'],
+    ['Europe', 'Location'],
+    ['four', 'Number of languages spoken in Spain'],
+    ['soccer', 'Favorite sport'],
+    ['flamenco', 'Traditional dance'],
+    ['Antonio Banderas', 'Voice in the movie Puss in Boots'],
+    ['La Tomatina festival', 'Biggest tomato fight in the world'],
+    ['San Fermin festival', 'Running of the bulls'],
+    ['Paella', 'Traditional dish']
+];
+
+const unit5 = [
+    ['rojo', 'red'],
+    ['amarillo', 'yellow'],
+    ['azul', 'blue'],
+    ['rosado', 'pink'],
+    ['morado', 'purple'],
+    ['verde', 'green'],
+    ['café', 'brown'],
+    ['blanco', 'white'],
+    ['negro', 'black'],
+    ['anaranjado', 'orange'],
+    ['turquesa', 'turquoise'],
+    ['guinda', 'maroon'],
+    ['plateado', 'silver'],
+    ['dorado', 'gold']
+];
+
+const unit6 = [
+    ['cero', 'zero'],
+    ['uno', 'one'],
+    ['dos', 'two'],
+    ['tres', 'three'],
+    ['cuatro', 'four'],
+    ['cinco', 'five'],
+    ['seis', 'six'],
+    ['siete', 'seven'],
+    ['ocho', 'eight'],
+    ['nueve', 'nine'],
+    ['diez', 'ten'],
+    ['once', 'eleven'],
+    ['doce', 'twelve'],
+    ['trece', 'thirteen'],
+    ['catorce', 'fourteen'],
+    ['quince', 'fifteen']
+];
+
+const unit7 = [
+    ['Perú', 'country'],
+    ['Lima', 'Capital of Perú'],
+    ['South America', 'Location'],
+    ['three', 'Number of languages spoken in Perú'],
+    ['soccer and surfing', 'favorite sports'],
+    ['Paddington', 'Movie inspired in the Peruvian Jungle'],
+    ['Costa', 'Natural region in the coastal plain'],
+    ['Sierra', 'Natural region in the mountain range'],
+    ['Selva', 'Natural region in the jungle'],
+    ['ceviche', 'Main Peruvian dish']
+];
+
+const unit8 = [
+    ['Lunes', 'Monday'],
+    ['Martes', 'Tuesday'],
+    ['Miércoles', 'Wednesday'],
+    ['Jueves', 'Thursday'],
+    ['Viernes', 'Friday'],
+    ['Sábado', 'Saturday'],
+    ['Domingo', 'Sunday'],
+    ['Enero', 'January'],
+    ['Febrero', 'February'],
+    ['Marzo', 'March'],
+    ['Abril', 'April'],
+    ['Mayo', 'May'],
+    ['Junio', 'June'],
+    ['Julio', 'July'],
+    ['Agosto', 'August'],
+    ['Septiembre', 'September'],
+    ['Octubre', 'October'],
+    ['Noviembre', 'November'],
+    ['Diciembre', 'December']
+];
+
 function unitChooser(unit)
 {
     switch(unit)
@@ -275,6 +361,16 @@ function unitChooser(unit)
             return unit2;
         case "unit3":
             return unit3;
+        case "unit4":
+            return unit4;
+        case "unit5":
+            return unit5;
+        case "unit6":
+            return unit6;
+        case "unit7":
+            return unit7;
+        case "unit8":
+            return unit8;
         default:
             return null;
     }

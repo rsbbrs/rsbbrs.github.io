@@ -240,7 +240,6 @@ h2 {
 }
 
 .popup-content {
-    text-align: center;
     color: ivory;
     border-radius: 15px;
     margin: 10% auto;
@@ -250,6 +249,14 @@ h2 {
     font-weight: bolder;
     animation-name: fade-in;
     animation-duration: 0.5s;
+}
+
+.popup-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .popup-content button {
