@@ -351,27 +351,37 @@ const unit8 = [
     ['Diciembre', 'December']
 ];
 
+// Sets the image for the particular unit and returns the unit map.
 function unitChooser(unit)
 {
     switch(unit)
     {
         case "unit1":
+            document.getElementById('unit-img').src = "images/Greetings.png";
             return unit1;
         case "unit2":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit2;
         case "unit3":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit3;
         case "unit4":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit4;
         case "unit5":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit5;
         case "unit6":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit6;
         case "unit7":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit7;
         case "unit8":
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return unit8;
         default:
+            document.getElementById('unit-img').src = "https://placehold.co/500x500";
             return null;
     }
 }
