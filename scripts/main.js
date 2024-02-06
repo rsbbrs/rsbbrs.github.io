@@ -275,9 +275,9 @@ const unit4 = [
     ['soccer', 'Favorite sport'],
     ['flamenco', 'Traditional dance'],
     ['Antonio Banderas', 'Voice in the movie Puss in Boots'],
-    ['La Tomatina festival', 'Biggest tomato fight in the world'],
-    ['San Fermin festival', 'Running of the bulls'],
-    ['Paella', 'Traditional dish']
+    ['La Tomatina', 'Biggest tomato fight in the world'],
+    ['San Fermin', 'Running of the bulls'],
+    ['paella', 'Traditional dish']
 ];
 
 const unit5 = [
@@ -330,25 +330,25 @@ const unit7 = [
 ];
 
 const unit8 = [
-    ['Lunes', 'Monday'],
-    ['Martes', 'Tuesday'],
-    ['Miércoles', 'Wednesday'],
-    ['Jueves', 'Thursday'],
-    ['Viernes', 'Friday'],
-    ['Sábado', 'Saturday'],
-    ['Domingo', 'Sunday'],
-    ['Enero', 'January'],
-    ['Febrero', 'February'],
-    ['Marzo', 'March'],
-    ['Abril', 'April'],
-    ['Mayo', 'May'],
-    ['Junio', 'June'],
-    ['Julio', 'July'],
-    ['Agosto', 'August'],
-    ['Septiembre', 'September'],
-    ['Octubre', 'October'],
-    ['Noviembre', 'November'],
-    ['Diciembre', 'December']
+    ['lunes', 'Monday'],
+    ['martes', 'Tuesday'],
+    ['miércoles', 'Wednesday'],
+    ['jueves', 'Thursday'],
+    ['viernes', 'Friday'],
+    ['sábado', 'Saturday'],
+    ['domingo', 'Sunday'],
+    ['enero', 'January'],
+    ['febrero', 'February'],
+    ['marzo', 'March'],
+    ['abril', 'April'],
+    ['mayo', 'May'],
+    ['junio', 'June'],
+    ['julio', 'July'],
+    ['agosto', 'August'],
+    ['septiembre', 'September'],
+    ['octubre', 'October'],
+    ['noviembre', 'November'],
+    ['diciembre', 'December']
 ];
 
 // Sets the image for the particular unit and returns the unit map.
