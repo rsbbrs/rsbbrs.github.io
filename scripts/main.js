@@ -15,7 +15,7 @@ function show(unit)
     const mainClone = main.cloneNode(true);
     main.replaceWith(translator);
     main = mainClone;
-
+    
     // Uses the unit to set the title in the HTML tag.
     document.getElementById('unit-header').innerHTML = unitTitle(unit.id);
 
@@ -354,31 +354,49 @@ const unit8 = [
 // Sets the image for the particular unit and returns the unit map.
 function unitChooser(unit)
 {
+    let image = document.getElementById('unit-img');
+
     switch(unit)
     {
         case "unit1":
-            document.getElementById('unit-img').src = "images/Greetings.png";
+            image.src = "images/Greetings.png";
+            image.style.width = '400px';
+            image.style.height = '400px';
             return unit1;
         case "unit2":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/alphabet.png";
+            image.style.width = '600px';
+            image.style.height = '400px';
             return unit2;
         case "unit3":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/guineapig.png";
+            image.style.width = '600px';
+            image.style.height = '400px';
             return unit3;
         case "unit4":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/paella.png";
+            image.style.width = '600px';
+            image.style.height = '400px';
             return unit4;
         case "unit5":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/colors.png";
+            image.style.width = '400px';
+            image.style.height = '500px';
             return unit5;
         case "unit6":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/numbers.png";
+            image.style.width = '600px';
+            image.style.height = '400px';
             return unit6;
         case "unit7":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/peru.png";
+            image.style.width = '600px';
+            image.style.height = '400px';
             return unit7;
         case "unit8":
-            document.getElementById('unit-img').src = "https://placehold.co/500x500";
+            image.src = "images/calendar.png";
+            image.style.width = '500px';
+            image.style.height = '500px';
             return unit8;
         default:
             document.getElementById('unit-img').src = "https://placehold.co/500x500";

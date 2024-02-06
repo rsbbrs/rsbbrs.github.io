@@ -15,3 +15,10 @@ common Spanish phrases by associating them with their English equivalents.
 - HTML
 - CSS
 - JavaScript
+
+### Credits
+- Images
+    - Miss Bedoya
+    - https://www.wordclouds.com
+    - https://pixabay.com
+    - https://unsplash.com
