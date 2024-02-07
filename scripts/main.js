@@ -110,7 +110,7 @@ function submitForm()
                 // Show the popup window with the "Correct" answer configuration.
                 document.getElementById('popupHeader').innerHTML = "Correct!";
                 document.getElementById('popup').classList.add("show");
-                document.getElementById('popup-content').style.backgroundColor = "blue";
+                document.getElementById('popup-content').style.backgroundColor = "#77DD77";
                 document.getElementById('answer-image').src = "images/Correct.png";
 
                 isCorrect = true;
