@@ -11,6 +11,7 @@ To access the website, enter rsbbrs.github.io into your web browser.
 ### Features
 - Eight units to select from.
 - Special character buttons for typing Spanish-specific letters both in lower- and upper-case.
+- Custom images for each unit.
 
 ### Languages
 - HTML
